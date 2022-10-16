@@ -1,46 +1,54 @@
-# Getting Started with Create React App
+# О проекте
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React-typescript проект. Развернут командой [Create React App](https://github.com/facebook/create-react-app) --template typescript.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Подготовка проекта
 
-### `yarn start`
+Установка зависимостей
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```bash
+$ yarn install
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Запуск проекта
 
-### `yarn test`
+Для запуска в режиме разрботки выполните команду
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+$ yarn start
+```
+Для запуска в prod, последовательно выполните команды
 
-### `yarn build`
+```bash
+$ yarn build
+$ yarn start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### TypeScript, ESLint, Prettier, Stylelint, Husky
+```bash
+# Проверка eslint
+$ yarn eslint:check
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Проверка prettier
+$ yarn prettier:check
 
-### `yarn eject`
+# Проверка stylelint
+$ yarn stylelint:check
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Исправление ошибок prettier
+$ yarn prettier:fix
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Исправление ошибок stylelint
+$ yarn stylelint:fix
+```
+В проекте используется husky. При коммите запускается pre-commit hook, который запускает команды на проверку типов, линтер, prettier.
+Так же проверяется сообщение коммита.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Валидный шаблон сообщения коммита:
+```bash
+chore: first commit
+fix(server): #13 send cors headers
+feat(blog): add comment section
+```
