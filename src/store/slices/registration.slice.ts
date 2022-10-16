@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Register } from '../../Types/Register.interface';
+import { Register } from '../../typespaces/interfaces/Register.interface';
 
 const initialState = {
   username: '',
