@@ -4,17 +4,17 @@ import { Button, Form, Input } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 
 // Slices
-import { onNext, setStepsStatus } from '../../store/slices/steps.slice';
-import { setLocationData } from '../../store/slices/location.slice';
+import { onNext, setStepsStatus } from 'store/slices/steps.slice';
+import { setLocationData } from 'store/slices/location.slice';
 
 // Selectors
-import { selectLocationData } from '../../store/selectors/location.selectors';
+import { selectLocationData } from 'store/selectors/location.selectors';
 
 // Interfaces
-import { Location } from '../../typespaces/interfaces/Location.interface';
+import { Location } from 'typespaces/interfaces/Location.interface';
 
 // Enums
-import { StepsStatus } from '../../typespaces/enums/stepsStatus';
+import { StepsStatus } from 'typespaces/enums/stepsStatus';
 
 const LocationForm: FC = () => {
   const dispatch = useDispatch();

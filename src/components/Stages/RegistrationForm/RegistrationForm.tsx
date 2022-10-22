@@ -4,20 +4,20 @@ import React, { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 // Slices
-import { setRegisterData } from '../../store/slices/registration.slice';
-import { onNext, setStepsStatus } from '../../store/slices/steps.slice';
+import { setRegisterData } from 'store/slices/registration.slice';
+import { onNext, setStepsStatus } from 'store/slices/steps.slice';
 
 // Selectors
-import { selectRegistrationData } from '../../store/selectors/registeration.selectors';
+import { selectRegistrationData } from 'store/selectors/registeration.selectors';
 
 // Interfaces
-import { Register } from '../../typespaces/interfaces/Register.interface';
+import { Register } from 'typespaces/interfaces/Register.interface';
 
 // Enums
-import { StepsStatus } from '../../typespaces/enums/stepsStatus';
+import { StepsStatus } from 'typespaces/enums/stepsStatus';
 
 // Helpers
-import { validateConfirmPassword, validatePassword } from '../../helpers/formValidators';
+import { validateConfirmPassword, validatePassword } from 'helpers/formValidators';
 
 const RegistrationForm: FC = () => {
   const dispatch = useDispatch();

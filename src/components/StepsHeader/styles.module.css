@@ -1,0 +1,13 @@
+.container {
+  display: block;
+}
+
+.container .steps {
+  display: none;
+}
+
+@media (min-width: 580px) {
+  .container .steps {
+    display: flex;
+  }
+}

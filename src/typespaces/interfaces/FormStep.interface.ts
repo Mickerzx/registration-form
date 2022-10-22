@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-export interface FormStep {
+export interface StepData {
   title: string;
   content: ReactNode;
 }

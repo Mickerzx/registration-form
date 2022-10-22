@@ -2,33 +2,33 @@
 import React, { FC } from 'react';
 
 // Components
-import FormSteps from '../components/FormSteps/FormSteps';
-import RegistrationForm from '../components/RegistrationForm/RegistrationForm';
-import LocationForm from '../components/LocationForm/LocationForm';
-import CompleteRegistrationForm from '../components/CompleteRegistrationForm/CompleteRegistrationForm';
+import Steps from '../components/Steps/Steps';
+import RegistrationForm from '../components/Stages/RegistrationForm/RegistrationForm';
+import LocationForm from '../components/Stages/LocationForm/LocationForm';
+import ConfirmPhoneForm from '../components/Stages/ConfirmPhoneForm/ConfirmPhoneForm';
 
 // Interfaces
-import { FormStep } from '../typespaces/interfaces/FormStep.interface';
+import { StepData } from 'typespaces/interfaces/FormStep.interface';
+
+const steps: StepData[] = [
+  {
+    title: 'этап',
+    content: <RegistrationForm />,
+  },
+  {
+    title: 'этап',
+    content: <LocationForm />,
+  },
+  {
+    title: 'этап',
+    content: <ConfirmPhoneForm />,
+  },
+];
 
 const Main: FC = () => {
-  const steps: FormStep[] = [
-    {
-      title: 'этап',
-      content: <RegistrationForm />,
-    },
-    {
-      title: 'этап',
-      content: <LocationForm />,
-    },
-    {
-      title: 'этап',
-      content: <CompleteRegistrationForm />,
-    },
-  ];
-
   return (
     <div>
-      <FormSteps data={steps} />
+      <Steps data={steps} />
     </div>
   );
 };

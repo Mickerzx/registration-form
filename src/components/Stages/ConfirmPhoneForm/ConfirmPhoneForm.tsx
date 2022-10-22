@@ -1,20 +1,20 @@
 // Core
 import React, { FC } from 'react';
 import { useDispatch } from 'react-redux';
-import { Button, Form, Input, message } from 'antd';
+import { Button, Form, Input } from 'antd';
 import InputMask from 'react-input-mask';
 
 // Slices
-import { setStepsStatus } from '../../store/slices/steps.slice';
+import { onNext, setStepsStatus } from 'store/slices/steps.slice';
 
 // Enums
-import { StepsStatus } from '../../typespaces/enums/stepsStatus';
+import { StepsStatus } from 'typespaces/enums/stepsStatus';
 
-const CompleteRegistrationForm: FC = () => {
+const ConfirmPhoneForm: FC = () => {
   const dispatch = useDispatch();
 
   const onFinish = () => {
-    message.success('Регистрация успешно завершена!');
+    dispatch(onNext());
     dispatch(setStepsStatus(StepsStatus.PROCESS));
   };
 
@@ -42,11 +42,11 @@ const CompleteRegistrationForm: FC = () => {
 
       <Form.Item>
         <Button type="primary" htmlType="submit">
-          Завершить регистрацию
+          Продолжить
         </Button>
       </Form.Item>
     </Form>
   );
 };
 
-export default CompleteRegistrationForm;
+export default ConfirmPhoneForm;
